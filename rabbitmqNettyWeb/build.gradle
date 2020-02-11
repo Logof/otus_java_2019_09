@@ -1,0 +1,38 @@
+plugins {
+  id 'java'
+  id "org.springframework.boot" version "2.2.4.RELEASE"
+  id "io.spring.dependency-management" version "1.0.9.RELEASE"
+  id 'idea'
+}
+
+repositories {
+  mavenCentral()
+}
+
+bootJar {
+  archiveVersion = '1.0-SNAPSHOT'
+}
+
+idea {
+  module {
+    downloadJavadoc = true
+    downloadSources = true
+  }
+}
+
+sourceCompatibility = 1.13
+targetCompatibility = 1.13
+
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-websocket:2.2.1.RELEASE'
+  implementation 'org.webjars:webjars-locator-core:0.41'
+  implementation 'org.webjars:sockjs-client:1.1.2'
+  implementation 'org.webjars:stomp-websocket:2.3.3-1'
+  implementation 'org.webjars:bootstrap:4.3.1'
+  implementation 'com.rabbitmq:amqp-client:5.7.0'
+}
+
+task hello {
+  println("Hello from Script!")
+}

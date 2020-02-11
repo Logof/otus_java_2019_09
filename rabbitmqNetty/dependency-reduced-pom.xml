@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ru.otus</groupId>
+  <artifactId>rabbitmqNetty</artifactId>
+  <version>2018-10</version>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer>
+                  <mainClass>ru.otus.dataclient.Client</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <properties>
+    <junit-jupiter-api.version>5.5.1</junit-jupiter-api.version>
+    <assertj-core.version>3.13.2</assertj-core.version>
+    <maven.compiler.target>12</maven.compiler.target>
+    <netty.version>4.1.43.Final</netty.version>
+    <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+    <maven.compiler.source>12</maven.compiler.source>
+    <logback-classic.version>1.2.3</logback-classic.version>
+    <mockito-core.version>2.28.2</mockito-core.version>
+    <amqp-client.version>5.7.0</amqp-client.version>
+  </properties>
+</project>
